@@ -137,7 +137,7 @@ const CreateWorkshopPage: React.FC = () => {
         throw new Error('Erreur lors de la création de l\'atelier');
       }
 
-      const workshop = await response.json();
+      const _workshop = await response.json();
       setStatus('success');
       setFormData({
         title: '',
