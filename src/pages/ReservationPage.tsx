@@ -38,21 +38,6 @@ const WorkshopCard = styled.div`
   }
 `;
 
-const _WorkshopImage = styled.div`
-  height: 200px;
-  
-  @media (min-width: 768px) {
-    width: 250px;s
-    height: auto;
-  }
-  
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-`;
-
 const WorkshopContent = styled.div`
   padding: 1.5rem;
   flex: 1;
@@ -263,9 +248,6 @@ interface Workshop {
 }
 
 const ReservationPage: React.FC = () => {
-  // État pour stocker l'atelier sélectionné et mettre à jour le formulaire
-  const [_selectedWorkshop, setSelectedWorkshop] = useState<Workshop | null>(null);
-  const [_formSubmitted, _setFormSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -285,7 +267,6 @@ const ReservationPage: React.FC = () => {
   };
   
   const handleReserveClick = (workshop: Workshop) => {
-    setSelectedWorkshop(workshop);
     if (workshop && workshop._id) {
       setFormData(prev => ({ ...prev, workshopId: workshop._id }));
     }

@@ -55,22 +55,6 @@ const BlogCard = styled.article`
   }
 `;
 
-const BlogImageContainer = styled.div`
-  height: 200px;
-  overflow: hidden;
-  
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
-  
-  ${BlogCard}:hover & img {
-    transform: scale(1.05);
-  }
-`;
-
 const BlogContent = styled.div`
   padding: 1.5rem;
 `;
@@ -226,20 +210,6 @@ const PopularPostLink = styled(Link)`
   
   &:hover {
     color: var(--green);
-  }
-`;
-
-const PopularPostImage = styled.div`
-  width: 60px;
-  height: 60px;
-  border-radius: 4px;
-  overflow: hidden;
-  margin-right: 1rem;
-  
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 `;
 
