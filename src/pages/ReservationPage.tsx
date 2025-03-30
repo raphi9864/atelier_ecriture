@@ -330,8 +330,8 @@ const ReservationPage: React.FC = () => {
     try {
       const response = await fetch('http://localhost:5001/api/workshops');
       if (response.ok) {
-        const data = await response.json();
-        setWorkshops(data);
+        const _workshops = await response.json();
+        setWorkshops(_workshops);
       }
     } catch (error) {
       console.error('Erreur:', error);
