@@ -16,6 +16,11 @@ mongoose.connect(process.env.MONGODB_URI!)
   .then(() => console.log('Connecté à MongoDB'))
   .catch(err => console.error('Erreur de connexion MongoDB:', err));
 
+// Ajouter une route de base
+app.get('/', (req, res) => {
+  res.json({ message: "API de l'Atelier d'Écriture - Serveur fonctionnel" });
+});
+
 app.use('/api/workshops', workshopRoutes);
 app.use('/api/reservations', reservationRoutes);
 
