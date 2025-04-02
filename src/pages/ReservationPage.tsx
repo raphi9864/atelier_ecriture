@@ -328,7 +328,7 @@ const ReservationPage: React.FC = () => {
   
   const fetchWorkshops = async () => {
     try {
-      const response = await fetch('http://localhost:5001/api/workshops');
+      const response = await fetch('https://atelier-ecriture.onrender.com/api/workshops');
       if (response.ok) {
         const _workshops = await response.json();
         setWorkshops(_workshops);

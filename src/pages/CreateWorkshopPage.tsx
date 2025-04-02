@@ -121,7 +121,7 @@ const CreateWorkshopPage: React.FC = () => {
     setErrorMessage('');
 
     try {
-      const response = await fetch('http://localhost:5001/api/workshops', {
+      const response = await fetch('https://atelier-ecriture.onrender.com/api/workshops', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
