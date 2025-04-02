@@ -236,13 +236,21 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     const fetchWorkshops = async () => {
       try {
-        const response = await fetch('https://atelier-ecriture.onrender.com/');
+        const response = await fetch('https://atelier-ecriture.onrender.com/api/workshops');
         if (response.ok) {
           const data = await response.json();
-          setWorkshops(data);
+          if (Array.isArray(data)) {
+            setWorkshops(data);
+          } else if (data.workshops && Array.isArray(data.workshops)) {
+            setWorkshops(data.workshops);
+          } else {
+            console.error('Format de données inattendu:', data);
+            setWorkshops([]);
+          }
         }
       } catch (error) {
         console.error('Erreur lors de la récupération des ateliers:', error);
+        setWorkshops([]);
       }
     };
 
