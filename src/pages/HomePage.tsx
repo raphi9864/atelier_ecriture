@@ -236,7 +236,7 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     const fetchWorkshops = async () => {
       try {
-        const response = await fetch('http://localhost:5001/api/workshops');
+        const response = await fetch('https://atelier-ecriture.onrender.com/');
         if (response.ok) {
           const data = await response.json();
           setWorkshops(data);
